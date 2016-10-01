@@ -11,10 +11,26 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161001054654) do
+ActiveRecord::Schema.define(version: 20161001061515) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "colleges", force: :cascade do |t|
+    t.string  "name"
+    t.string  "location"
+    t.integer "sat"
+    t.integer "gpa"
+    t.integer "social"
+    t.integer "athletics"
+  end
+
+  create_table "matches", force: :cascade do |t|
+    t.integer  "profile_id"
+    t.integer  "college_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "profiles", force: :cascade do |t|
     t.integer "sat"

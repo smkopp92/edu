@@ -7,7 +7,7 @@ class ProfilesController < ApplicationController
     @profile = Profile.new(profile_params)
     @profile.user = current_user
     @profile.save
-    redirect_to '/'
+    redirect_to '/matches/create'
   end
 
   private

@@ -9,4 +9,8 @@ Rails.application.routes.draw do
   root to: "home#show"
 
   resources :profiles, only: [:new, :create]
+
+  resources :matches, only: [:create, :index]
+
+  match '/matches/create', :to => "matches#create", via: [:get, :post]
 end
