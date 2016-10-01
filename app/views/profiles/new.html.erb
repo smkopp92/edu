@@ -1,0 +1,15 @@
+<%= form_for(@profile) do |f| %>
+  <%= f.label :sat %>
+  <%= f.text_field :sat %>
+    <br>
+  <%= f.label :gpa %>
+  <%= f.text_field :gpa %>
+    <br>
+  <%= f.label :social %>
+  <%= f.select :social, [1,2,3,4,5]%>
+    <br>
+  <%= f.label :athletics %>
+  <%= f.select :athletics, [1,2,3,4,5]%>
+    <br>
+  <%= f.submit "Create Profile" %>
+<% end %>
