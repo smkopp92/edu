@@ -1,3 +1,21 @@
-<% @colleges.each do |college| %>
-  <%= college.name %>
-<% end %>
+<!DOCTYPE html>
+<head>
+	<title>edU College Matches</title>
+</head>
+<body>
+	<div class="header">
+		<h3 class="title">College Matches</h3>
+		<ul class="menu">
+			<li><%= link_to "Show" %>Home</li>
+			<li><%= link_to "New" %>Edit Profile</li>
+		</ul>
+	</div>
+
+	<div class="match_body">
+		<% @colleges.each do |college| %>
+  			<h5 class="matches"><%= college.name %></h5>
+		<% end %>
+	</div>
+</body>
+
+</html>
