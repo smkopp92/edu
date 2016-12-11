@@ -5,6 +5,7 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
-College.create(name: "Kevin College", location: "Your mom", sat: 20000, gpa: 0.000001, social: 1, athletics: 123456)
-College.create(name: "Sebastian College", location: "Your mom", sat: 1, gpa: 1, social: 1, athletics: 1)
-College.create(name: "Boston College", location: "New England", sat: 2045, gpa: 3.72, social: 8, athletics: 7)
+
+College.create(name: "Boston College", location: "New England", sat: 2045, gpa: 3.72, social: 8, athletics: 7, size: 10000)
+College.create(name: "University of Alabama", location: "South East", sat: 1652, gpa: 3.66, social: 10, athletics: 10, size: 30000)
+College.create(name: "Boston University", location: "New England", sat: 1946, gpa: 3.66, social: 6, athletics: 6, size: 6000)

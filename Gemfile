@@ -9,6 +9,7 @@ gem 'omniauth-facebook'
 gem 'omniauth'
 gem 'dotenv'
 gem 'dotenv-rails'
+gem 'rake'
 
 group :development, :test do
   gem 'capybara'

@@ -13,6 +13,6 @@ class ProfilesController < ApplicationController
   private
 
   def profile_params
-    params.require(:profile).permit(:sat, :gpa, :social, :athletics)
+    params.require(:profile).permit(:sat, :gpa, :social, :athletics, :size)
   end
 end
