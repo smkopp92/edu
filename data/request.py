@@ -6,7 +6,7 @@ import json
 import urllib2
 
 
-base_url = "https://api.data.gov/ed/collegscorecard/v1/schools/"
+base_url = "https://api.data.gov/ed/collegescorecard/v1/schools"
 csv_file = 'school_names.csv'
 api_key = "api_key"
 
@@ -18,10 +18,15 @@ names = df.Institution_Name
 names_lower = [name.lower() for name in names]
 
 
-request_url = "{}/?api_key={}".format(base_url,api_key)
 
 # Write response to JSON file for easy parsing into seeds data
 with open('school_data.json', 'wb') as w:
 	for name in names_lower:
-		r = urllib2.Request("{}&school.name={}".format(request_url,name))
-		w.write(r)
+		urls_ = "{}?school.name={}&api_key={}".format(base_url,name,api_key)
+		try:
+			r = urllib2.Request(urls_)
+		except urllib2.HTTPError:
+			continue
+		response = urllib2.urlopen(r)
+		data = response.read()
+		w.write(data)
